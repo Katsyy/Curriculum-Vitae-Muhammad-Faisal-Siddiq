@@ -20,13 +20,7 @@ body {
   overflow: hidden;
   isolation: isolate;
   color: #ffffff;
-  background: linear-gradient(
-    120deg,
-    #123b91 0%,
-    #1d4ed8 45%,
-    #4f46e5 75%,
-    #7c3aed 100%
-  );
+  background: #1d4ed8;
   box-shadow: 0 12px 35px rgba(29, 78, 216, 0.18);
   margin: 0 0 32px;
   padding: 55px 0;
@@ -70,10 +64,7 @@ body {
   color: #1d4ed8;
   font-weight: 700;
   text-decoration: none;
-  transition:
-    transform 0.2s ease,
-    background 0.2s ease,
-    box-shadow 0.2s ease;
+  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
 }
 
 .hero-button:hover {
@@ -133,19 +124,29 @@ body {
 }
 
 .hero-detail {
-  display: grid;
-  grid-template-columns: 105px minmax(0, 1fr);
-  align-items: start;
-  column-gap: 8px;
-  margin: 0 0 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  margin: 0 0 12px;
   color: #334155;
   font-size: 14px;
   line-height: 1.5;
   overflow-wrap: anywhere;
 }
 
-.hero-detail:last-child {
-  margin-bottom: 0;
+.hero-detail-horizontal {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  flex-wrap: wrap;
+  column-gap: 8px;
+  row-gap: 2px;
+  margin: 0 0 12px;
+  color: #334155;
+  font-size: 14px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
 }
 
 .hero-detail-label {
@@ -156,7 +157,15 @@ body {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
-  line-height: 1.8;
+  line-height: 1.5;
+}
+
+.hero-detail-horizontal .hero-detail-label {
+  white-space: nowrap;
+}
+
+.hero-detail:last-child {
+  margin-bottom: 0;
 }
 
 .hero-decoration {
@@ -268,12 +277,6 @@ body {
     font-size: 23px;
   }
 
-  .hero-detail {
-    grid-template-columns: 105px minmax(0, 1fr);
-    column-gap: 8px;
-    text-align: left;
-  }
-
   .cv-container {
     width: calc(100% - 32px);
     padding: 28px !important;
@@ -334,18 +337,38 @@ body {
   }
 
   .hero-detail {
-    grid-template-columns: 95px minmax(0, 1fr);
-    column-gap: 6px;
-    align-items: start;
-    margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  margin: 0 0 12px;
+  color: #334155;
+  font-size: 14px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+  .hero-detail-horizontal {
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: flex-start;
+    column-gap: 8px;
+    row-gap: 2px;
+    margin-bottom: 12px;
     font-size: 13px;
     text-align: left;
   }
 
   .hero-detail-label {
-    font-size: 10px;
-    line-height: 1.8;
-  }
+  display: block;
+  margin: 0;
+  color: #64748b;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1.5;
+}
 
   .hero-decoration-one {
     width: 250px;
